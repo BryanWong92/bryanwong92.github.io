@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Bryan | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+  <div id="wrap-top">
+    <header>
+      <h1 id="title-name">Bryan Wong</h1>
+      <nav id="nav-main">
+        <ul>
+          <li>
+            <a href="#">
+              Home
+            </a>
+          </li>
+          <!--
+          -->
+          <li>
+            <a href="#portfolio-content">
+              Portfolio
+            </a>
+          </li>
+          <!--
+          -->
+          <li>
+            <a href="#contact-info">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="bio-info">
+      <img id="bio-avatar" alt="Avatar image." src="./img/avatar.png">
+      <p id="bio-blurb">Hey! I'm a front-end developer who loves responsive design and css. I recently finished a degree in front-end web development at Treehouse and am excited to put all my skills to use!</p>
+    </section>
+  </div>
+
+  <div id="wrap-mid">
+    <section id="portfolio-content">
+      <h2 class="title-section">Portfolio</h2>
+      <ul id="portfolio-items">
+        <li>
+          <a href="#">
+            <img src="./img/portfolio-1.png" alt="Marketing page project thumbnail.">
+            <h3>Marketing Page</h3>
+          </a>
+          <p>This project shows the front page of a marketing website meant for a specific business I'm interested in.</p>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./img/portfolio-2.png" alt="Search page project thumbnail.">
+            <h3>Search Page</h3>
+          </a>
+          <p>This project searches through a specific database to find information that the user is trying to look up.</p>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./img/portfolio-3.png" alt="Travel app project thumbnail.">
+            <h3>Travel App</h3>
+          </a>
+          <p>This project compares travel times based on different transportation methods and tells you the best one.</p>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./img/portfolio-6.png" alt="Favorite Spots project thumbnail.">
+            <h3>Map of Favorite Spots</h3>
+          </a>
+          <p>This project uses mapping apis to plot points for my favorite spots in the city for a do-it-yourself walking tour.</p>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./img/portfolio-5.png" alt="Photo Gallery project thumbnail.">
+            <h3>Photo Gallery</h3>
+          </a>
+          <p>This project shows pictures from a recent trip to the viewer and allows them to easily navigate through photos.</p>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./img/portfolio-4.png" alt="Calculator project thumbnail.">
+            <h3>Calculator</h3>
+          </a>
+          <p>Someone can enter in the numbers they want, and press the big blue button and get the result.</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <div id="wrap-bot">
+    <section id="contact-info">
+      <h2 class="title-section">Contact</h2>
+      <p>
+        If you're interested in chatting or want more information about what I've been working on, I'd love to hear from you!
+      </p>
+      <ul id="contact-items">
+        <li class="contact-phone">
+          <span>Phone </span><a href="tel:555-5555">+1(111)555-1234</a>
+        </li>
+        <li class="contact-email">
+          <span>Email </span><a href="mailto:noreply@google.com">noreply@google.com</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <hr>
+      <h2 id="footer-name">Bryan W.</h2>
+
+      <nav id="nav-footer">
+        <ul>
+          <li>
+            <a href="#">
+            Home
+          </a>
+          </li>
+          <li>
+            <a href="#portfolio-content">
+            Portfolio
+          </a>
+          </li>
+          <li>
+            <a href="#contact-info">
+            Contact
+          </a>
+          </li>
+        </ul>
+      </nav>
+
+      <a id="to-top" href="#">BACK TO TOP</a>
+    </footer>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script>
+    $(function() {
+
+      $('#nav-main ul').prepend($('<li id="nav-main--menu-toggle"><a href="">Show Menu</a></li>'));
+
+      var checkSize = function() {
+        if ($("#bio-avatar").css("max-width") == "40%") {
+          $("#nav-main li").css("display", "inline-block");
+          $("#nav-main--menu-toggle").hide();
+        } else {
+          $("#nav-main li").css("display", "list-item").hide();
+          $("#nav-main--menu-toggle").css("display", "list-item");
+          $('#nav-main--menu-toggle a').text("Show Menu");
+          $toggleText = true;
+        }
+      }
+
+      checkSize();
+
+      $(window).resize(function() {
+        $("#nav-main li").finish();
+        checkSize();
+      });
+
+      var $toggleText = true;
+      $('#nav-main--menu-toggle').click(function(e) {
+         e.preventDefault();
+
+         if ($toggleText) {
+             $('#nav-main--menu-toggle a').text("Hide Menu");
+             $toggleText = false;
+           } else {
+             $('#nav-main--menu-toggle a').text("Show Menu");
+             $toggleText = true;
+           }
+
+           $('#nav-main li:nth-child(n+2)').slideToggle("slow");
+       });
+
+     });
+  </script>
+</body>
+
+</html>
