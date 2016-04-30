@@ -1,0 +1,51 @@
+//===========================================
+//  Footer
+//===========================================
+footer {
+  @extend %cf;
+  @media #{$res-med} {
+    margin-bottom: rem(48px);
+  }
+  @media #{$res-lrg} {
+    margin-bottom: rem(16);
+  }
+}
+%footer--to-top {
+  font-weight: $font-weight--extra-bold;
+  font-size: rem(13.2px);
+}
+#footer-name {
+  @extend %footer--to-top;
+  float: left;
+  @media #{$res-med} {
+    float: left;
+    margin-top: rem(16px);
+    font-weight: $font-weight--extra-bold;
+    font-size: rem(14.4px);
+  }
+}
+#to-top {
+  @extend %footer--to-top;
+  float: right;
+  display: block;
+  margin: rem(10.956px) 0;
+  @media #{$res-med} {
+    display: none;
+  }
+}
+#nav-footer {
+  display: none;
+  @media #{$res-med} {
+    display: block;
+    float: right;
+    font-weight: $font-weight--extra-bold;
+    font-size: rem(14.4px);
+    margin-top: rem(16px);
+    li {
+      float: left;
+    }
+    a {
+      padding: rem(12px);
+    }
+  }
+}
