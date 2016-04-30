@@ -1,0 +1,85 @@
+//===========================================
+//  Header
+//===========================================
+header {
+  @extend %cf;
+}
+#title-name {
+  font-weight: $font-weight--extra-bold;
+  font-size: rem(24px);
+  @media #{$res-med} {
+    font-size: rem(26.4px);
+    margin-top: rem(48px);
+  }
+  @media #{$res-lrg} {
+    float: left;
+  }
+}
+#nav {
+  &-main {
+    text-transform: uppercase;
+    & li {
+      background: $rgb--bg-nav;
+      margin-top: rem(5px);
+      border-radius: rem(2px);
+      @media #{$res-med} {
+        background: none;
+        display: inline-block;
+        margin: 0;
+      }
+    }
+    & a {
+
+      // full width target
+      font-weight: $font-weight--extra-bold;
+      display: block;
+      padding: rem(10px) 0;
+      font-size: rem(14.4px);
+      @media #{$res-med} {
+        padding: rem(16px);
+      }
+    }
+    @media #{$res-lrg} {
+      float: right;
+      margin-top: rem(48px);
+      ul li {
+        float: left;
+      }
+    }
+  }
+}
+#bio {
+  &-info {
+    @extend %cf;
+    padding: 0 1.5%;
+    margin: rem(44px) 0;
+    @media #{$res-med} {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+    @media #{$res-lrg} {
+      padding: 0;
+    }
+  }
+  &-avatar {
+    max-width: 75%;
+    border-radius: 50%;
+    @media #{$res-med} {
+      max-width: 40%;
+    }
+  }
+  &-blurb {
+    color: $rgb--text-bio-blurb;
+    font-size: rem(15.5px);
+    @media #{$res-med} {
+      margin: 0;
+      padding: 0 2.5%;
+      text-align: left;
+      font-size: rem(19.2px);
+    }
+    @media #{$res-lrg} {
+      padding-left: 0;
+    }
+  }
+}
